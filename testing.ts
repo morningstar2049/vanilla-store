@@ -1,11 +1,10 @@
-import { getStore, dispatch } from "./store";
+import { getStore, dispatch, numStore } from "./store";
 
 const { count } = getStore();
 
-console.log(count);
+numStore.subscribe("someCallbackId", () => {
+  console.log(getStore().count);
+});
 
 dispatch({ type: "add", payload: 11 });
-console.log(getStore().count);
 dispatch({ type: "divide", payload: 3 });
-
-console.log(getStore().count);

@@ -2,9 +2,10 @@ import { createStore } from "./createStore";
 
 const initialState = {
   count: 7,
+  name: "something.ts",
 };
 
-const numStore = createStore({
+export const numStore = createStore({
   name: "test-store",
   initialState,
   reducers: {
